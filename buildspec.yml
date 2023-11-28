@@ -21,16 +21,12 @@ phases:
 
   post_build:
     commands:
-      - echo "Copying build output, package.json, and Procfile to the artifact directory..."
+      - echo "Copying build output and Procfile to the artifact directory..."
       - mkdir -p /tmp/artifact
       - cp -r build/* /tmp/artifact/
       - cp package.json /tmp/artifact/
       - cp -r public /tmp/artifact/public  # Include public directory if needed
-      - echo "Creating a Procfile..."
-      - echo 'web: npx serve -s build' > /tmp/artifact/Procfile
-      # If you decided to go with a custom Node.js server approach, use the following lines:
-      - echo "Creating server.js..."
-      - printf 'const express = require("express");\nconst path = require("path");\nconst app = express();\nconst PORT = process.env.PORT || 8080;\n\napp.use(express.static(path.join(__dirname, "build")));\n\napp.get("*", (req, res) => {\n  res.sendFile(path.join(__dirname, "build", "index.html"));\n});\n\napp.listen(PORT, () => {\n  console.log(`Server is running on port ${PORT}`);\n});\n' > /tmp/artifact/server.js
+      - cp Procfile /tmp/artifact/Procfile
       - echo "Zipping the artifact..."
       - cd /tmp/artifact
       - zip -r my-react-app.zip .
