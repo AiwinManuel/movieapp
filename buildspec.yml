@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 16
     commands:
       # Install dependencies
       - npm install
@@ -26,4 +26,4 @@ phases:
 artifacts:
   # The zip file created in the post_build phase will be the artifact
   files:
-    - my-react-app.zip
+    - my-react-app.zip 
