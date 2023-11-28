@@ -11,6 +11,7 @@ phases:
   pre_build:
     commands:
       - echo "Running tests..."
+      # Uncomment the line below to execute tests
       # - npm test
 
   build:
@@ -26,6 +27,7 @@ phases:
       - cp package.json /tmp/artifact/
       # Include any additional files needed for deployment
       # - cp server.js /tmp/artifact/
+      - echo "Creating a Procfile..."
       - echo 'web: npx serve -s build' > /tmp/artifact/Procfile
       - echo "Zipping the artifact..."
       - cd /tmp/artifact
