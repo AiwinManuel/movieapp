@@ -2,12 +2,28 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
+      # Install dependencies
       - npm install
+
+  pre_build:
+    commands:
+      # Optional: run tests or other pre-build steps
+      # - npm test
+
   build:
     commands:
+      # Build the React app
       - npm run build
+
+  post_build:
+    commands:
+      # Package build artifacts for Elastic Beanstalk deployment
+      - zip -r my-react-app.zip build
+
 artifacts:
+  # The zip file created in the post_build phase will be the artifact
   files:
-    - '**/*'
-  base-directory: 'build'
+    - my-react-app.zip
