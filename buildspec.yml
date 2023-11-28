@@ -11,7 +11,6 @@ phases:
   pre_build:
     commands:
       - echo "Running tests..."
-      # Uncomment the line below to execute tests
       # - npm test
 
   build:
@@ -25,10 +24,9 @@ phases:
       - mkdir -p /tmp/artifact
       - cp -r build/* /tmp/artifact/
       - cp package.json /tmp/artifact/
-      # Include any additional files needed for deployment
+      # If you have a server.js or other root level files, include them as well
       # - cp server.js /tmp/artifact/
-      - echo "Creating a Procfile..."
-      - echo 'web: npx serve -s build' > /tmp/artifact/Procfile
+      - "echo 'web: npx serve -s build' > /tmp/artifact/Procfile"
       - echo "Zipping the artifact..."
       - cd /tmp/artifact
       - zip -r my-react-app.zip .
