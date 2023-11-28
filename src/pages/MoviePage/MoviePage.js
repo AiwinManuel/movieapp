@@ -33,7 +33,7 @@ const MoviesPage = () => {
   // Function to handle booking button click
   const handleBooking = (movieId) => {
     // Navigate to the booking page with the movieId
-    history.push(`/movie-details/${movieId}?username=${encodeURIComponent(username)}`);
+    history.push(`/movie-details/${movieId}?username=${encodeURIComponent(username)}`); 
   };
 
   return (
