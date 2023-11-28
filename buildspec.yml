@@ -27,7 +27,7 @@ phases:
       # If you have a server.js or other root level files, include them as well
       # - cp server.js /tmp/artifact/
       - echo Creating a Procfile...
-      - echo 'web: npx serve -s build' > /tmp/artifact/Procfile
+      - echo web: npx serve -s build' > /tmp/artifact/Procfile
       - echo Zipping the artifact...
       - cd /tmp/artifact
       - zip -r my-react-app.zip .
