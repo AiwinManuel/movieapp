@@ -1,0 +1,62 @@
+.movie-container {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .blog-header {
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    position: relative;
+  }
+  .grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .grid-item button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ffa500; /* Example button color, change as needed */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .grid-item button:hover {
+    background-color: #cc8400; /* Darker color on hover, change as needed */
+  }
+  
+  .grid-item {
+    position: relative;
+    height: 200px; /* or any other fixed height */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .grid-item h2 {
+    position: absolute;
+    z-index: 1;
+  }
+  
+  
+
+  /* ... add for each grid item ... */
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
