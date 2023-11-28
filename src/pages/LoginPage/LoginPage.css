@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('/Users/aiwin/Documents/Macs/Fall_2023/ACC/termProject/Movie-booking-app/movie-booking-app/src/images/wallpaperflare.com_wallpaper.jpg') no-repeat center center;
+    background: url('../../images/wallpaperflare.com_wallpaper.jpg') no-repeat center center;
     background-size: cover;
   }
   
