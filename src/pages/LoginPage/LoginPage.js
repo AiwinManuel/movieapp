@@ -13,7 +13,7 @@ const LoginPage = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('../..https://g3thlcx24g.execute-api.us-east-1.amazonaws.com/prod/userlogin', {
+      const response = await fetch('https://g3thlcx24g.execute-api.us-east-1.amazonaws.com/prod/userlogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
