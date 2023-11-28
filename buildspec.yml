@@ -20,10 +20,18 @@ phases:
 
   post_build:
     commands:
-      # Package build artifacts for Elastic Beanstalk deployment
-      - zip -r my-react-app.zip build
+      # The build directory is where React app builds to, include it
+      # Also include package.json for npm start, and any other root-level files necessary
+      - cp -r build/* /tmp/ 
+      - cp package.json /tmp/
+      # Add any other files you need at the root, like a Procfile or server.js if you have one
+      # - cp Procfile /tmp/
+      # - cp server.js /tmp/
+      # Zip everything up from /tmp/ directory
+      - cd /tmp/
+      - zip -r ../my-react-app.zip .
 
 artifacts:
   # The zip file created in the post_build phase will be the artifact
   files:
-    - my-react-app.zip 
+    - my-react-app.zip
