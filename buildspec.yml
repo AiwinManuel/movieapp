@@ -21,9 +21,9 @@ phases:
 
   post_build:
     commands:
-      - echo "Zipping the application..."
-      # Zip the entire working directory excluding node_modules
-      - zip -r my-react-app.zip . -x "node_modules/*"
+      - echo "Zipping the application excluding node_modules..."
+      # This command zips all files and folders from the project root, excluding node_modules
+      - zip -r my-react-app.zip . -x "node_modules/*" ".*" "*/*.log"
       - echo "Artifact zip created."
 
 artifacts:
