@@ -26,7 +26,11 @@ phases:
 
 artifacts:
   files:
-    - my-react-app.zip
+    - Procfile
+    - public/*
+    - server.js
+    - build/*
+    - src/*
     - app.js
     - index.html
     - package.json
