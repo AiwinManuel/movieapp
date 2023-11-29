@@ -30,6 +30,5 @@ artifacts:
     - app.js
     - index.html
     - package.json
-    - node_modules/async/*
-    - node_modules/lodash/*
+    - node_modules/*
   discard-paths: no
