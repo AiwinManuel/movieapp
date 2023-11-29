@@ -27,4 +27,5 @@ phases:
 artifacts:
   files:
     - my-react-app.zip
+    - package.json
   discard-paths: no
