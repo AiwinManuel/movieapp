@@ -6,8 +6,7 @@ phases:
       nodejs: 18
     commands:
       - echo "Installing source NPM dependencies..."
-      - npm ci
-      - npm audit fix --force
+      - npm install
       
   pre_build:
     commands:
