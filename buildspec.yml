@@ -26,14 +26,15 @@ phases:
 
 artifacts:
   files:
-    - Procfile
-    - public/*
-    - server.js
-    - build/*
-    - src/*
-    - app.js
-    - index.html
-    - package.json
-    - package-lock.json
-    - node_modules/*
+    # - Procfile
+    # - public/*
+    # - server.js
+    # - build/*
+    # - src/*
+    # - app.js
+    # - index.html
+    # - package.json
+    # - package-lock.json
+    # - node_modules/*
+    - '**/*'
   discard-paths: no
