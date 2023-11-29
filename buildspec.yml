@@ -21,12 +21,11 @@ phases:
 
   post_build:
     commands:
-      - echo "Copying build output and Procfile to the artifact directory..."
+      - echo "Preparing the artifact directory..."
       - mkdir -p /tmp/artifact
-      - cp -r build/* /tmp/artifact/
-      - cp package.json /tmp/artifact/
-      - cp Procfile /tmp/artifact/
-      - cp server.js /tmp/artifact/ # Only necessary if you created a server.js
+      - echo "Copying all files to the artifact directory..."
+      - cp -r * /tmp/artifact/
+      - cp -r .* /tmp/artifact/ || true # The '|| true' is to avoid failing if there are no dot files
       - echo "Zipping the artifact..."
       - cd /tmp/artifact
       - zip -r my-react-app.zip .
