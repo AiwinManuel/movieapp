@@ -27,5 +27,7 @@ phases:
       - echo "Artifact zip created."
 
 artifacts:
+  name: my-react-app
   files:
-    - my-react-app.zip
+    - application.zip
+  discard-paths: yes
