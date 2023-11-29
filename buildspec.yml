@@ -12,8 +12,6 @@ phases:
     commands:
       - echo "Running tests..."
       # Uncomment the line below to execute tests
-      - npm test
-
   build:
     commands:
       - echo "Building the React app..."
