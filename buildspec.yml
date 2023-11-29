@@ -21,17 +21,11 @@ phases:
 
   post_build:
     commands:
-      - echo "Preparing the artifact directory..."
-      - mkdir -p /tmp/artifact
-      - echo "Copying all files to the artifact directory..."
-      - cp -r * /tmp/artifact/
-      - cp -r .* /tmp/artifact/ || true # The '|| true' is to avoid failing if there are no dot files
-      - echo "Zipping the artifact..."
-      - cd /tmp/artifact
-      - zip -r my-react-app.zip .
-      - echo "Moving the artifact to the build directory..."
-      - mv my-react-app.zip $CODEBUILD_SRC_DIR
+      - echo "Zipping the application..."
+      # Zip the entire working directory excluding node_modules
+      - zip -r my-react-app.zip . -x "node_modules/*"
+      - echo "Artifact zip created."
 
 artifacts:
   files:
-    - my-react-app.zip 
+    - my-react-app.zip
