@@ -11,7 +11,6 @@ phases:
   pre_build:
     commands:
       - echo "Running tests..."
-      # Uncomment the line below to execute tests
   build:
     commands:
       - echo "Building the React app..."
@@ -20,7 +19,7 @@ phases:
   post_build:
     commands:
       - echo "Zipping the application including node_modules..."
-      # This command zips all files and folders from the project root, including node_modules
+      # This command zips all files and folders from the project root, including node_modules 
       - zip -r my-react-app.zip . -x ".*" "*/*.log"
       - echo "Artifact zip created."
 
